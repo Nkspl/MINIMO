@@ -1,0 +1,389 @@
+/* css/style.css */
+
+/* Botón de cerrar sesión en la topbar */
+.topbar .logout-btn {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  color: #fff;              /* mismo color que el texto */
+  text-decoration: none;
+}
+.topbar .logout-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.topbar .logout-btn:hover {
+  opacity: 0.8;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 320px;
+}
+
+.login-form h1 {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.login-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.field-error {
+  color: red;
+  font-size: 0.8rem;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  background: #060606;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1000;
+}
+
+.topbar .brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.topbar #menu-btn {
+  margin-right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.topbar .user-info {
+  margin-left: auto;
+  font-size: 0.9rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background: #1b1b1b;
+  color: #fff;
+  overflow: auto;
+  transform: translateX(-220px);
+  transition: transform 0.3s ease;
+}
+
+.sidebar:not(.collapsed) {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.sidebar li {
+  padding: 0.5rem 1rem;
+}
+
+.sidebar li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar li.submenu > a::after {
+  content: '▾';
+  float: right;
+}
+
+.sidebar li.submenu ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.sidebar li.submenu:hover ul {
+  display: block;
+  background: #555;
+}
+
+.content {
+  margin-top: 3rem;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+
+
+/* --- Estilos globales --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+/* --- Contenedor principal --- */
+.inv-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* --- Título "Inventario" --- */
+.inv-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+
+/* --- Formulario de búsqueda --- */
+.inv-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+ 
+}
+.inv-search label {
+  font-weight: bold;
+  font-size: 12px;
+}
+.inv-search input {
+  width: 200px;
+  height: 20px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 0 20px;
+  font-size: 12px;
+}
+.inv-search button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+  margin-left: 12px;
+}
+
+/* --- Cuerpo: carrusel + detalles --- */
+.inv-body {
+  display: flex;
+  gap: 40px;
+}
+.inv-carousel {
+  flex: 2;
+  background: #111111;
+  height: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.inv-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.inv-carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.2);
+  border:black;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.inv-carousel #prev { left: 8px; }
+.inv-carousel #next { right: 8px; }
+
+.inv-details {
+
+display: grid;
+  grid-template-columns: 140px 1fr; /* 140px para etiquetas, el resto para valores */
+  row-gap: 10px;
+  column-gap: 20px;
+  font-size: 12px;
+  margin-top: 0; /* Ajusta según tu mockup */
+
+  flex: 1.7;
+}
+
+.inv-details .label {
+  font-weight: bold;
+   font-size: 12px;
+}
+
+/* Detalles: forzar una línea, recortar y mostrar tooltip */
+/*.inv-details p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative; */ /* para tooltip 
+}*/
+
+.inv-details .value {
+/* Para truncar si es muy largo, opcional */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inv-details .value[title] {
+  cursor: default;
+}
+
+
+.inv-details .value[title]:hover {
+  white-space: normal;
+  overflow: visible;
+  background: #fff;
+  padding: 0px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
+
+ /*
+.inv-details .value:hover {
+  white-space: normal;
+  overflow: visible;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 10;
+}*/
+
+
+.inv-details p span {
+  font-weight: bold;
+  margin-right: 50px;
+}
+
+/* --- Sección Ubicación --- */
+.inv-location {
+  margin-top: 170px;
+}
+.inv-location h2 {
+ border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+ font-size: 14px;
+/*
+  margin-bottom: 16px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;*/
+}
+
+.inv-location table {
+  width: 100%;
+  border-collapse:collapse;
+  border: none;
+  font-size: 12px;
+}
+
+.inv-location th,
+.inv-location td {
+   border: none;
+  text-align: center;
+  padding: 30px;
+  
+  /*padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;*/
+}
+
+.inv-location th {
+  background: #d0eaff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 20px;
+  padding: 8px 24px;
+  /* background: #f9f9f9;
+  font-weight: bold;*/
+}
+
+
+
+
+/* Inputs de búsqueda con anchos personalizados */
+#cod { width: 100px; }      /* un poco más corto */
+#desc { width: 440px; }     /* un poco más largo */
+#oem { width: 280px; }      /* mediano */
+
+
+
+
+

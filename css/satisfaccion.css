@@ -1,0 +1,55 @@
+
+/* 1) Filtro “pill” en una línea */
+.sat-filter {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 40px 12px;
+}
+.sat-filter label {
+  font-weight: arial;
+  font-size: 12px;
+  text-align: center;
+}
+.sat-filter input {
+  flex: 1 1 100px;
+  max-width: 100px;
+  height: 20px;
+  padding: 0 8px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+/* 2) Línea separadora */
+.sat-separator {
+  margin: 0 40px 16px;
+  border-bottom: 2px solid #000;
+}
+
+/* 3) Scroll horizontal para la tabla */
+.sat-table-container {
+  margin: 0 40px 20px;
+  overflow-x: auto;
+}
+
+/* 4) Tabla normal, sin manipular display */
+.sat-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: max-content;
+}
+.sat-table th,
+.sat-table td {
+  padding: 8px 16px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 12px;
+  border: none;
+}
+.sat-table th {
+  font-weight: bold;
+  background: #fafafa;
+  font-size: 13px;
+}

@@ -1,0 +1,111 @@
+/* comparar.css */
+
+/* Contenedor principal de comparación */
+.comp-container {
+  display: flex;
+  gap: 40px;
+  margin: 40px;
+}
+
+
+
+/* --- Título "Comparar" --- */
+.comp-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-left:40px;
+}
+
+
+
+/* Cada columna dentro de la comparación */
+.comp-column {
+  flex: 1;
+}
+
+/* Formulario de búsqueda en comparar */
+.comp-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 40px 24px;
+}
+.comp-search label {
+  font-weight: bold;
+}
+.comp-search input {
+  width: 200px;
+  height: 32px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 0 12px;
+  font-size: 16px;
+}
+.comp-search button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Carrusel (reutilizado de inventario) */
+.inv-carousel {
+  background: #0e0e0e;
+  height: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.inv-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.inv-carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#prev1 { left: 8px; }
+#next1 { right: 8px; }
+#prev2 { left: 8px; }
+#next2 { right: 8px; }
+
+/* Detalles alineados con CSS Grid */
+.inv-details {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  row-gap: 12px;
+  column-gap: 24px;
+  margin-top: 16px;
+  font-size: 16px;
+}
+.inv-details .label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.inv-details .value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.inv-details .value[title]:hover {
+  white-space: normal;
+  overflow: visible;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 10;
+}
