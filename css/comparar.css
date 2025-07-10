@@ -38,11 +38,12 @@
 }
 .comp-search input {
   width: 200px;
-  height: 32px;
+  height: 25px;
   border: 2px solid #000;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0 12px;
   font-size: 16px;
+
 }
 .comp-search button {
   background: none;

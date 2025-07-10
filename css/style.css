@@ -90,6 +90,8 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
 }
 
 .topbar #menu-btn {
@@ -112,7 +114,7 @@ body {
   left: 0;
   bottom: 0;
   width: 220px;
-  background: #1b1b1b;
+  background: #131313;
   color: #fff;
   overflow: auto;
   transform: translateX(-220px);
@@ -156,6 +158,85 @@ body {
   background: #555;
 }
 
+#sidebar button {
+    display: flex;                   /* flex para icono + texto */
+    align-items: center;         /* verticalmente centrado */
+    justify-content: left;    /* horizontalmente a la izquierda */
+    width: 100%;
+    margin: 0px auto;
+    padding: 15px;
+    border: none;
+    background: #131313;
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+  /* nueva transición suave */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+
+
+/*Hover: pequeño movimiento al pasar el mouse */
+#sidebar :hover {
+ /* se mueve 5px hacia la derecha */
+ transform: translateX(5px);
+ /* oscurece ligeramente el fondo al pasar el mouse */
+ background-color: #222222;
+}
+
+
+.dropdown {
+  position: relative;
+  display: list-item; /*  Para que el botón y el submenú estén en la misma línea */
+
+}
+
+/*  Estilo para el submenu de maestro de inventario*/
+.dropdown-content {
+  display:none;/*  Oculta el submenú */
+  position: absolute;
+  /* Posiciona el submenú debajo del botón */
+  background-color: #101010;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; /*  Para que el submenú esté encima de otros elementos */
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0px 0px;
+  display: block;
+ 
+}
+
+.dropdown-content a:hover {
+  background-color: #131313;
+}
+
+/*  Este estilo es para mostrar el submenú cuando el botón se hace clic
+    Se puede agregar en Javascript o mediante el atributo :hover del botón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .content {
   margin-top: 3rem;
   margin-left: 1rem;
@@ -177,6 +258,17 @@ table td {
   border: 1px solid #ccc;
   text-align: left;
 }
+
+
+.inpu input{
+  border: 2px solid #000;
+  border-radius: 20px;
+
+}
+
+
+
+
 
 
 
@@ -213,13 +305,13 @@ body {
 }
 .inv-search label {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
 }
 .inv-search input {
   width: 200px;
-  height: 20px;
+  height: 25px;
   border: 2px solid #000;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 0 20px;
   font-size: 12px;
 }

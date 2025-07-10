@@ -75,9 +75,9 @@ $doSearch = isset($_GET['a1']) || isset($_GET['a2']);
    <h1 class="comp-title">Comparar</h1>
 
   <form class="comp-search" method="GET">
-    <label for="a1">Ítem 1:</label>
+    <label for="a1">Codigo 1:</label>
     <input id="a1" name="a1" value="<?=htmlspecialchars($a1)?>">
-    <label for="a2">Ítem 2:</label>
+    <label for="a2">Codigo 2:</label>
     <input id="a2" name="a2" value="<?=htmlspecialchars($a2)?>">
     <button type="submit">🔍</button>
   </form>
