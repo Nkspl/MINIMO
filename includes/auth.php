@@ -8,6 +8,7 @@ require_once __DIR__ . '/rut_validator.php';
  * Intenta autenticar al usuario.
  */
 function login(string $rut, string $clave): bool {
+    $rut = limpiar_rut($rut);
     if (!validar_rut($rut)) {
         return false;
     }

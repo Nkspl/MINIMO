@@ -3,7 +3,7 @@
 // Valida formato de RUT en el login
 function validarLogin() {
   const rut = document.getElementById('rut').value;
-  const regex = /^[0-9]+-[0-9Kk]$/;
+  const regex = /^\d{1,3}(?:\.\d{3})*-?[0-9Kk]$/;
   const errorEl = document.getElementById('rut-error');
   if (!regex.test(rut)) {
     errorEl.innerText = 'Formato de RUT inválido';

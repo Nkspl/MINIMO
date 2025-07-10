@@ -2,13 +2,33 @@
 // includes/rut_validator.php
 
 /**
- * Valida RUT chileno (sin puntos, con guión y dígito verificador).
- * Ej: 12345678-5
+ * Elimina puntos, guiones u otros caracteres y devuelve el RUT en
+ * mayúsculas. Útil para almacenar el valor siempre con el mismo
+ * formato. Ej: "12.345.678-k" → "12345678K".
+ */
+function limpiar_rut(string $rut): string {
+    return strtoupper(preg_replace('/[^0-9kK]/', '', $rut));
+}
+
+/**
+ * Devuelve el RUT formateado con puntos y guión.
+ */
+function formatear_rut(string $rut): string {
+    $rut = limpiar_rut($rut);
+    if (strlen($rut) < 2) return $rut;
+    $num = substr($rut, 0, -1);
+    $dv  = substr($rut, -1);
+    $num = number_format(intval($num), 0, '', '.');
+    return $num . '-' . $dv;
+}
+
+/**
+ * Valida un RUT chileno (con o sin puntos o guión).
  */
 function validar_rut(string $rut): bool {
-    $rut = preg_replace('/[^\\dkK]/', '', $rut);
+    $rut = limpiar_rut($rut);
     if (strlen($rut) < 2) return false;
-    $dv = strtoupper(substr($rut, -1));
+    $dv = substr($rut, -1);
     $num = substr($rut, 0, -1);
     $reversed = strrev($num);
     $factor = 2;
@@ -19,6 +39,6 @@ function validar_rut(string $rut): bool {
     }
     $rest = 11 - ($sum % 11);
     $dv_calc = $rest == 11 ? '0' : ($rest == 10 ? 'K' : (string)$rest);
-    return $dv_calc === $dv;
+    return strtoupper($dv_calc) === $dv;
 }
 ?>
