@@ -2,6 +2,7 @@
 // usuarios.php
 require_once 'includes/auth.php'; require_login();
 require_once 'includes/db.php';
+require_once 'includes/rut_validator.php';
 
 // Asegurar tabla de permisos
 $conn->query("CREATE TABLE IF NOT EXISTS user_permissions (
@@ -18,7 +19,7 @@ $modules = ['inventario','comparar','mi_usuario'];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_POST['create'])) {
     // Crear usuario
-    $rut   = trim($_POST['rut']);
+    $rut   = limpiar_rut(trim($_POST['rut']));
     $hash  = password_hash($_POST['clave'], PASSWORD_DEFAULT);
     $nom   = $conn->real_escape_string($_POST['nombre']);
     $ape   = $conn->real_escape_string($_POST['apellido']);

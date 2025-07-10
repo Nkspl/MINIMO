@@ -1,8 +1,9 @@
 <?php
 include 'db.php';  // tu conexión
+require_once 'includes/rut_validator.php';
 
 // Datos del nuevo usuario
-$rut      = '24471968-6';
+$rut      = limpiar_rut('24471968-6');
 $pass     = '1234';
 $hash     = password_hash($pass, PASSWORD_DEFAULT);
 $nombre   = 'Nickens';

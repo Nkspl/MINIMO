@@ -1,9 +1,10 @@
 <?php
 session_start();
 include 'db.php';  // tu conexión a MySQL
+require_once 'includes/rut_validator.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $rut   = trim($_POST['rut']);
+    $rut   = limpiar_rut(trim($_POST['rut']));
     $clave = $_POST['clave'];
 
     // 1) Prepara y ejecuta la consulta solo por rut
