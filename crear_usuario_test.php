@@ -6,8 +6,8 @@ require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/rut_validator.php';
 
 // Datos del usuario de prueba
-$rut      = limpiar_rut('12345678-9');
-$pass     = 'clave123';
+$rut      = limpiar_rut('24471968-6');
+$pass     = '1234';
 $hash     = password_hash($pass, PASSWORD_DEFAULT);
 $nombre   = 'Usuario';
 $apellido = 'Prueba';
